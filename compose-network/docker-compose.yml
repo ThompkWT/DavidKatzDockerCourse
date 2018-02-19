@@ -3,3 +3,9 @@ version: "3"
 services:
   db:
     build: ./db
+  clothing:
+    build: ./clothing
+    volumes:
+      - ./clothing:app
+    depends_on:
+      - db
