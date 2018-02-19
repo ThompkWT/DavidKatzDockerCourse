@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`listing to PORT: ${PORT}`);
+  console.log(`express server is listing to PORT: ${PORT}`);
 });
 
 
