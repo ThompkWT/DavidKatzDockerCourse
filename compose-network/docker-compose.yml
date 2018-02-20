@@ -19,3 +19,11 @@ services:
       - 5002:80
     depends_on:
       - clothing
+  site:
+    build: ./site
+    volumes:
+      - ./site:/src
+    ports:
+      - 5003:80
+    depends_on:
+      - prices
