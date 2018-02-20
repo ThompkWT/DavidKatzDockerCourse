@@ -3,6 +3,8 @@ version: "3"
 services:
   db:
     build: ./db
+    networks:
+      - core
   clothing:
     build: ./clothing
     volumes:
@@ -11,6 +13,8 @@ services:
       - db
     ports:
       - 5001:80
+    networks:
+      - core
   prices:
     build: ./prices
     volumes:
@@ -19,6 +23,9 @@ services:
       - 5002:80
     depends_on:
       - clothing
+    networks:
+      - core
+      - front-end
   site:
     build: ./site
     volumes:
@@ -27,6 +34,8 @@ services:
       - 5003:80
     depends_on:
       - prices
+    networks:
+      - front-end
 
 networks:
   core:
