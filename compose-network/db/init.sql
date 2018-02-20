@@ -4,6 +4,4 @@ CREATE TABLE clothing(
 
 INSERT INTO clothing(name)
 VALUES
-('shirts'),
-('pants'),
-('socks');
+('shirts');

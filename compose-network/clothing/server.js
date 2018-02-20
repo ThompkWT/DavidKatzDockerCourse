@@ -8,7 +8,16 @@ const pool = new Pool({ user: 'postgres', host: 'db'}); // we can just do 'db' c
 
 app.get('/', (req, res) => {
   pool.query('SELECT * FROM clothing', (err, resFromPostgres) => {
+    // let testObj = resFromPostgres.rows;
+    // console.log(Object.keys(testObj));
+    // let keys = Object.keys(testObj);
+    // keys.forEach((key) => {
+    //   console.log('value: ', Object.keys(testObj[key]));
+    // })
+    // testObj = 'test!!!';
+    resFromPostgres.rows.push({'yeah': 'yeah~~'})
     res.json(resFromPostgres.rows)
+    // res.send('working??')
   });
 });
 
