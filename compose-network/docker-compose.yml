@@ -27,3 +27,9 @@ services:
       - 5003:80
     depends_on:
       - prices
+
+networks:
+  core:
+    driver: bridge
+  front-end:
+    driver: bridge
